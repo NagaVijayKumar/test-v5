@@ -1,0 +1,20 @@
+alert_subject: '[US] Paid supervisor not running'
+alerta_environment: freshdesk
+alerta_severity: critical
+filter:
+- query:
+    query_string:
+      query: (name:"sidekiq" AND group:"sidekiq" AND wc:"Admin::SupervisorWorker")
+include:
+- wc
+- q
+index: freshdesk*
+priority: 1
+query_delay:
+  minutes: 5
+region: us-east-1
+threshold: 60
+timeframe:
+  minutes: 60
+type: flatline
+use_count_query: true

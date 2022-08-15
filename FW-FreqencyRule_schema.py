@@ -1,6 +1,5 @@
 {
 
-
     # mandatory 
     'alert_subject': {
         'required': True,
